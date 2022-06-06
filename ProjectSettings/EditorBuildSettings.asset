@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/goodend1.unity
     guid: 851dedf1425b9a94fbec69ec4e202591
+  - enabled: 1
+    path: Assets/Scenes/branch2_right.unity
+    guid: 6ee5c5b4f0a55f64ab9f5797ba15bfdd
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e22cc6f2d0524864bab243ed6d5d5db6, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 25053fc4c5e2bd74184efe953e298e23, type: 2}
