@@ -10,12 +10,18 @@ public class Teleporter : MonoBehaviour
     [SerializeField] public int radius;
     [SerializeField] public float waitTimeRangeMin;
     [SerializeField] public float waitTimeRangeMax;
+    private float startX;
+    private float startY;
+    private float startZ;
 
     AudioSource audioData;
 
     // Start is called before the first frame update
     void Start()
     {
+        startX = transform.position.x;
+        startY = transform.position.y;
+        startZ = transform.position.z;
         audioData = GetComponent<AudioSource>();
         waitTime = Random.Range(waitTimeRangeMin, waitTimeRangeMax);
     }
@@ -27,7 +33,9 @@ public class Teleporter : MonoBehaviour
         if (counter > (audioData.clip.length + waitTime) * 80)
         {
             counter = 0;
-            transform.position = new Vector3(Random.Range(-radius, radius), 0, Random.Range(-radius, radius));
+            transform.position = new Vector3(Random.Range(-radius + startX, radius + startX),
+                                             Random.Range(startY, radius + startY),
+                                             Random.Range(-radius + startZ, radius + startZ));
             audioData.Play(0);
             waitTime = Random.Range(waitTimeRangeMin, waitTimeRangeMax);
         }
